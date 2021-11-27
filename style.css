@@ -1,0 +1,12 @@
+#con1 {
+    margin-left: 400px;
+    color: white;
+}
+body {
+    height: 100%;
+    background-image: url(https://pw.artfile.me/wallpaper/23-10-2012/650x407/trollface-vektornaya-grafika-galstuk-lic-49996.jpg);
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
