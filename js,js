@@ -1,0 +1,30 @@
+const startUrl = "https://pokeapi.co/api/v2/pokemon?limit=0&offset=10"
+const startRequest = new XMLHttpRequest()
+let state
+let result = document.getElementById('result')
+// let el = document.getElementById(poki)
+
+// pokemons.forEach(kinez => {poki.innerHTML += `${kinez}`})
+pokemonListRequest(startUrl)
+
+
+function pokemonListRequest(url) {
+	startRequest.open("GET", url)
+    startRequest.responseType = 'json'
+    startRequest.send()
+    startRequest.onload = function(){
+    	// console.log(startRequest.response)
+    	state = startRequest.response
+    	drawList()
+    }
+
+}
+function drawList(){
+	let pokemonElement = document.createElement('ul')
+	state.results.forEach(pokemon => {
+		pokemonElement.innerHTML += `
+		<li>${pokemon.name}</li>
+		`
+	})
+result.appendChild(pokemonElement)
+}
